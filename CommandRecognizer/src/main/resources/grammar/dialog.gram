@@ -1,0 +1,7 @@
+#JSGF V1.0;
+
+grammar dialog;
+
+<lumiere> = (allume | éteint) la lumière;
+
+public <commande> = ( aziz | glados ) ( <lumiere> );
