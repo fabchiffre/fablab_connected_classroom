@@ -1,0 +1,20 @@
+2015-04-20 15:38:35.828 [INFO ] [.o.core.internal.CoreActivator] - openHAB runtime has been started (v1.6.2).
+2015-04-20 15:38:37.082 [INFO ] [o.o.i.s.i.DiscoveryServiceImpl] - mDNS service has been started
+2015-04-20 15:38:37.124 [INFO ] [o.o.i.s.i.DiscoveryServiceImpl] - Service Discovery initialization completed.
+2015-04-20 15:38:38.813 [INFO ] [penhab.io.rest.RESTApplication] - Started REST API at /rest
+2015-04-20 15:38:46.805 [INFO ] [c.internal.ModelRepositoryImpl] - Loading model 'salle.sitemap'
+2015-04-20 15:38:46.983 [INFO ] [c.internal.ModelRepositoryImpl] - Loading model 'salle.script'
+2015-04-20 15:38:47.067 [INFO ] [c.internal.ModelRepositoryImpl] - Loading model 'db4o.persist'
+2015-04-20 15:38:47.080 [INFO ] [c.internal.ModelRepositoryImpl] - Loading model 'rrd4j.persist'
+2015-04-20 15:38:47.086 [INFO ] [c.internal.ModelRepositoryImpl] - Loading model 'exec.persist'
+2015-04-20 15:38:47.089 [INFO ] [c.internal.ModelRepositoryImpl] - Loading model 'logging.persist'
+2015-04-20 15:38:47.110 [INFO ] [c.internal.ModelRepositoryImpl] - Loading model 'salle.items'
+2015-04-20 15:38:47.668 [INFO ] [.o.u.w.i.servlet.WebAppServlet] - Started Classic UI at /openhab.app
+2015-04-20 15:38:57.199 [INFO ] [c.internal.ModelRepositoryImpl] - Loading model 'salle.rules'
+2015-04-20 15:40:07.253 [INFO ] [c.internal.ModelRepositoryImpl] - Refreshing model 'salle.items'
+2015-04-20 15:40:47.273 [INFO ] [c.internal.ModelRepositoryImpl] - Refreshing model 'salle.items'
+2015-04-20 15:55:47.381 [INFO ] [c.internal.ModelRepositoryImpl] - Refreshing model 'salle.items'
+2015-04-20 15:56:17.405 [INFO ] [c.internal.ModelRepositoryImpl] - Refreshing model 'salle.sitemap'
+2015-04-20 16:03:47.634 [INFO ] [o.i.r.i.resources.ItemResource] - Received HTTP GET request at 'items/light' for the unknown item 'light'.
+2015-04-20 16:24:44.762 [INFO ] [penhab.io.rest.RESTApplication] - Stopped REST API
+2015-04-20 16:24:48.767 [INFO ] [.o.u.w.i.servlet.WebAppServlet] - Stopped Classic UI

@@ -1,0 +1,6 @@
+Put any additional bundles in here, which you want to use with openHAB.
+They will be automatically installed and activated.
+
+
+le binding org.openhab.binding.aleoncean-1.6.0-SNAPSHOT est utilisé en substitution 
+du binding officiel Enocean qui ne permet pas d'envoyer des messages

@@ -1,0 +1,66 @@
+Group All
+Group Classroom	"Classroom"	(All)
+Group Shutters 	(All)
+Group Weather 	(All)
+Group Status 	(All)
+
+/* active groups */
+Group:Switch:OR(ON, OFF) 		Lights 		"All Lights [(%d)]" 								(All)
+Group:Switch:OR(ON, OFF) 		Heating 	"No. of Active Heatings [(%d)]" 	<heating> 		(All)
+Group:Switch:OR(ON, OFF) 		Students	"elève"							 	<child1> 		(All)
+Group:Number:AVG 				Temperature	"Avg. Room Temperature [%.1f °C]" 	<temperature>	(Status)
+Group:Contact:OR(OPEN, CLOSED) 	Windows 	"Open windows [(%d)]"				<contact>		(All)
+
+/*arduino */
+String Arduino "Arduino [%s]"  //{serial="/dev/ttyACM0"}
+String Arduino_weight "Weight [%s]"  
+String Arduino_temperature "Temperature [%s]"
+Switch Arduino_Led "Led_Arduino" 
+Switch Arduino_button "button [%s]"
+
+
+
+/* EnOcean */
+//String EnOcean "enOcean [%s]" {serial="/dev/ttyUSB0"}
+//Switch Broadcast (All) {enocean="id=FF:FF:FF:FF"}
+//Switch Broadcast_Button (All)
+//Switch Button_Up (All) {enocean="{id=FE:FF:90:E7, eep=F6:02:01, channel=B}"}
+//Switch Button_Down (All) {enocean="{id=FE:FF:90:E7, eep=F6:02:01, channel=A}"}
+//Switch Button_B (All) {enocean="{id=00:29:5C:81, eep=F6:02:01, channel=B}"}
+//Switch Button_A (All) {enocean="{id=00:29:5C:81, eep=F6:02:01, channel=A}"}
+//Switch Rocker (All) {enocean="{id=01:80:8D:BD, eep=F6:02:01, channel=B}"}
+//Switch Ocean_button "button [%s]"
+//Number Temp "Temperature [%.1f °C]" (All) {enocean="{id=01:80:F8:29, eep=A5:02:05, parameter=TEMPERATURE}"}
+//Number Temp "Temperature [%.1f °C]" <temperature> (All) {enocean="{id=01:80:F8:29, eep=A5:02:05, parameter=TEMPERATURE}"}
+
+
+/* Alenocean */
+Switch Light "L (A) up: pressed / released" {aleoncean="LOCALID=00:29:5C:81,TYPE=LD_F6-02-02,PARAMETER=BUTTON_DIM_B"}
+Switch Button_A "R (A) up: pressed / released" {aleoncean="REMOTEID=00:29:5C:81,TYPE=RD_F6-02-01,PARAMETER=BUTTON_DIM_A"}
+Switch Button_B "R (A) up: pressed / released" {aleoncean="REMOTEID=00:29:5C:81,TYPE=RD_F6-02-01,PARAMETER=BUTTON_DIM_B"}
+
+
+/* Lights
+Switch Light_CR_Board 				"Board" 		(Classroom, Lights)
+Switch Light_CR_Room				"Room"			(Classroom, Lights)
+Switch Daniel						"Daniel"		<child1> (Classroom, Students)
+*/
+
+/* NTP binding demo item*/
+DateTime		Date			"Date [%1$tA, %1$td.%1$tm.%1$tY]"	<calendar>	{ ntp="Europe/Berlin:de_DE" }
+
+
+/* Demo items
+Switch DemoSwitch				"Switch"
+Dimmer DimmedLight				"Dimmer [%d %%]"		<slider>
+Color  RGBLight					"RGB Light"				<slider>
+Rollershutter DemoShutter	 	"Roller Shutter"
+Dimmer DemoBlinds			 	"Blinds [%d %%]"		<rollershutter>
+Number Scene_General			"Scene"					<sofa>
+Number Radio_Station			"Radio"					<network>
+Dimmer Volume 					"Volume [%.1f %%]"
+Number Temperature_Setpoint		"Temperature [%.1f °C]" <temperature>
+
+String UnknownDevices    "Unknown Devices in Range: [%s]" { bluetooth="?" }
+Number NoOfPairedDevices "Paired Devices in Range: [%d]"  { bluetooth="!" }
+*/
