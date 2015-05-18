@@ -4,4 +4,4 @@ grammar dialog;
 
 <lumiere> = (allume | éteint) la lumière;
 
-public <commande> = ( aziz | glados ) ( <lumiere> );
+public <commande> = ( <lumiere> );

@@ -30,7 +30,21 @@ rule "Set_Led"
 		sendCommand (Arduino, "light=" + state)
 		callScript("salle.script");
 end
-
+*/
+/*rule "sayHello"
+	when 
+		Item Light received command
+	then
+		if (Light.equals("button_ON")) {
+			setMasterVolume(1f)
+			say("Well, I put the light on")
+			}else{
+				setMasterVolume(1f)
+				say("Good night")
+			}
+			
+end*/
+/*
 
 rule "Arduino_button"
 	when
@@ -73,16 +87,7 @@ rule "Ocean_button2"
 		logInfo("EnOcean","try sendCommand")
 		Button_A.sendCommand(ON)
 end*/
-/*
-rule "broacast"
-	when 
-		Item Broadcast_Button changed
-	then
-		logInfo("Broadcast","try sendCommand")
-		Broadcast.sendCommand("0x0030")
-		Broadcast.sendCommand("0x0000")
-		Broadcast.sendCommand(ON)		
-end	*/
+
 
 /**
  * This is a demo rule which simulates a real dimmer by reacting to increase/decrease commands 
@@ -189,75 +194,3 @@ then
 	logInfo("Weather","Temperature evolved of " + Weather_Temperature.deltaSince(now.minusMinutes(2)).toString + " degrees.")
 end
 */
-
-/** shows how to use sensor values from the past 
-rule "Persistence Demo"
-when
-	Time cron "0 * * * * ?"
-then	
-	if(Weather_Temperature.changedSince(now.minusMinutes(1))) {
-		println("2 minutes ago, the temperature was " + Weather_Temperature.historicState(now.minusMinutes(2)) + " degrees.")		
-	}
-end
-*/
-
-/*
- * shows how to check recent switch states - very helpful to avoid executing something too often, just
- * because somebody presses a button too often (e.g. sending a notification, if the doorbell button is pressed)
- 
-rule "Persistence Demo 2"
-when
-	Item DemoSwitch received command
-then
-	if(!DemoSwitch.changedSince(now.minusSeconds(5))) {
-		logInfo("Persistence Demo", "You did not press this button during the last 5 seconds!")
-	}
-end
-
-rule "Timer Demo"
-when
-	Item Light_GF_Corridor_Ceiling received command
-then
-	if(receivedCommand==ON) {
-		if(timer==null) {
-			// first ON command, so create a timer to turn the light off again
-			timer = createTimer(now.plusSeconds(10)) [|
-				sendCommand(Light_GF_Corridor_Ceiling, OFF)
-			]
-		} else {
-			// subsequent ON command, so reschedule the existing timer
-			timer.reschedule(now.plusSeconds(10))
-		}
-	} else if(receivedCommand==OFF) {
-		// remove any previously scheduled timer
-		if(timer!=null) {
-			timer.cancel
-			timer = null
-		}	
-	}
-end
-
-// Creates an item that stores the last update time of this item
-rule "Records last weather update time"
-when
-  Item Weather_Temperature received update
-then
-  postUpdate(Weather_LastUpdate, new DateTimeType())
-end
-
-// This rule will be used to test Scale transformation service
-rule "Compute humidex"
-when Item Weather_Temperature changed or
-	 Item Weather_Humidity changed 
-then
-	var Number T = Weather_Temperature.state as DecimalType
-	var Number H = Weather_Humidity.state as DecimalType	
-	var Number x = 7.5 * T/(237.7 + T)
-	var Number e = 6.112 * Math::pow(10, x.doubleValue) * H/100
-	var Number humidex = T + (new Double(5) / new Double(9)) * (e - 10)
-	Weather_Humidex.postUpdate(humidex)
-end
-
-*/
-
-

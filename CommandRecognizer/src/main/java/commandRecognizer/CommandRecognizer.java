@@ -9,6 +9,7 @@ public class CommandRecognizer extends LiveSpeechRecognizer {
 
 	private static final String LIGHT_ON = "allume la lumière";
 	private static final String LIGHT_OFF = "éteint la lumière";
+        private static final String HELLO = "bonjour";
 	private static final String STOP = "stop";
 	
 	private LightCallback m_callback;
